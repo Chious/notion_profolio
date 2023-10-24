@@ -1,0 +1,26 @@
+[
+    {
+        "skill": "HTML",
+        "description": "4 Years Expreience"
+    },
+    {
+        "skill": "CSS",
+        "description": "4 Years Expreience"
+    },
+    {
+        "skill": "Javascript",
+        "description": "4 Years Expreience"
+    },
+    {
+        "skill": "Accessibility",
+        "description": "4 Years Expreience"
+    },
+    {
+        "skill": "React",
+        "description": "3 Years Expreience"
+    },
+    {
+        "skill": "Sass",
+        "description": "3 Years Expreience"
+    }
+]
