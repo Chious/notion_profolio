@@ -1,30 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { Card, Button, Grid, Box } from "@mui/material";
-import Image from "next/image";
-import logo1 from "../../assets/images/thumbnail-project-1-large.webp";
-import logo2 from "../../assets/images/thumbnail-project-2-large.webp";
-import logo3 from "../../assets/images/thumbnail-project-3-large.webp";
-import logo4 from "../../assets/images/thumbnail-project-4-large.webp";
-import logo5 from "../../assets/images/thumbnail-project-5-large.webp";
-import logo6 from "../../assets/images/thumbnail-project-6-large.webp";
+import { Card, Grid, Box, Typography } from "@mui/material";
+import Link from "next/link";
+import Image from "mui-image";
 
-export default function ProjectCards({ data }) {
-  const images = [logo1, logo2, logo3, logo4, logo5, logo6];
-  const img = data.img;
-  const title = data.title;
-  const tag = data.tag;
+export const ProjectCardNew = ({ data }) => {
+  const { cover, Name, LivePage, Code, Tags } = data;
+  const [isHovered, setHover] = useState(false);
 
-  var printtag = tag.map((e, i) => {
+  const printtag = Tags.map((e, i) => {
     return (
-      <p key={i} style={{ paddingRight: 10, height: 24, margin: 0 }}>
-        {e}
+      <p
+        key={i}
+        style={{
+          color: "black",
+          height: 30,
+          margin: 0,
+          background: "rgb(78, 225, 160)",
+          border: "1px solid none",
+          borderRadius: "5px",
+        }}
+      >
+        {e.name}
       </p>
     );
   });
-
-  var [isHovered, setHover] = useState(false);
 
   return (
     <>
@@ -42,7 +43,7 @@ export default function ProjectCards({ data }) {
                 style={{
                   zIndex: 1,
                   width: "100%",
-                  height: "99%",
+                  height: "100%",
                   position: "absolute",
                   display: "flex",
                   alignItems: "center",
@@ -61,8 +62,8 @@ export default function ProjectCards({ data }) {
                     gap: "10px",
                   }}
                 >
-                  <Button
-                    sx={{
+                  <Link
+                    style={{
                       color: "white",
                       padding: 0,
                       margin: 0,
@@ -71,11 +72,14 @@ export default function ProjectCards({ data }) {
                       borderRadius: 0,
                       borderColor: "#4EE1A0",
                     }}
+                    href={LivePage}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     View Project
-                  </Button>
-                  <Button
-                    sx={{
+                  </Link>
+                  <Link
+                    style={{
                       color: "white",
                       padding: 0,
                       margin: 0,
@@ -84,30 +88,33 @@ export default function ProjectCards({ data }) {
                       borderRadius: 0,
                       borderColor: "#4EE1A0",
                     }}
+                    href={Code}
                   >
                     View Code
-                  </Button>
+                  </Link>
                 </div>
               </Box>
             )}
             <Image
               alt=""
-              src={images[img]}
+              src={cover}
               style={{
-                height: "100%",
-                width: "100%",
                 position: "relative",
                 zIndex: 0,
               }}
+              width="100%"
+              height="370px"
+              fit="cover"
+              duration={0}
             />
           </div>
-          <p style={{ color: "white" }}>{title}</p>
+          <p style={{ color: "white" }}>{Name}</p>
           <div
             style={{
-              height: 24,
+              height: "50px",
               display: "flex",
               flexDirection: "row",
-              paddingBottom: 10,
+              gap: "5px",
             }}
           >
             {printtag}
@@ -116,4 +123,4 @@ export default function ProjectCards({ data }) {
       </Grid>
     </>
   );
-}
+};

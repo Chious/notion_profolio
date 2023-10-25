@@ -1,53 +1,49 @@
+"use client";
+
 import Image from "next/image";
-import { Button, Box, Divider, Card, Grid } from "@mui/material";
-import skill from "./skill.json";
-import Photo from "../../assets/images/image-profile-desktop.webp";
+import { Button, Box, Divider, Stack, Typography } from "@mui/material";
+import BasicTabs from "./BasicTabs";
+import Photo2 from "../../assets/images/profolio-picture.png";
+import { BasicSkill } from "./ChildTabs";
 
 export default function Protfolio() {
-  const skills = skill.map((e, i) => (
-    <Grid item md={4} lg={4} sm={12} key={i}>
-      <Card sx={{ background: "none" }} elevation={0}>
-        <h2>{e.skill}</h2>
-        <p>{e.description}</p>
-      </Card>
-    </Grid>
-  ));
-
   return (
     <>
-      <Box sx={{ marginLeft: "120px", marginRight: "120px" }}>
+      <Stack sx={{ marginLeft: "120px", marginRight: "120px" }} spacing={4}>
         <Box>
           <Image
             alt=""
-            src={Photo}
+            src={Photo2}
             style={{
               position: "absolute",
-              top: 0,
-              right: 120,
-              width: 250,
+              top: 200,
+              right: 100,
+              width: 350,
               height: 400,
+              objectFit: "contain",
             }}
           />
-          <div
+          <Stack
             style={{
               position: "relative",
               zIndex: 1,
               display: "flex",
-              flexDirection: "column",
-              marginBottom: "20px",
             }}
+            direction="column"
+            spacing={2}
           >
             <h1>Nice to meet you!</h1>
             <h1>
-              {`I'm`}
+              {`I'm `}
               <span style={{ borderBottom: "5px solid #4EE1A0" }}>
-                {`Adam Keyes.`}
+                {`Sam Chiou.`}
               </span>
             </h1>
             <p style={{ maxWidth: 520 }}>
-              {`Based in the UK, I'm a front-end developer passionate about
-              building accessible web apps that users love.`}
+              {`Based in the Taipei, I'm a front-end developer passionate about
+              building web apps and slove user's problem.`}
             </p>
+            <p>{`#Sociology #Front-end`}</p>
             <Button
               sx={{
                 width: 150,
@@ -59,14 +55,12 @@ export default function Protfolio() {
             >
               CONTRACT ME
             </Button>
-          </div>
+          </Stack>
         </Box>
 
         <Divider sx={{ background: "gray" }} />
-        <Grid container spacing={1}>
-          {skills}
-        </Grid>
-      </Box>
+        <BasicSkill />
+      </Stack>
     </>
   );
 }
