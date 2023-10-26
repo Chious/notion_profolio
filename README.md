@@ -41,6 +41,8 @@ This is edit version from [version1](https://github.com/Chious/front-mentor-sing
 
 ### Useful resources
 
+1. [How to use .env in Nextjs](https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables)
+
 ## Author
 
 - Github - [Chious](https://github.com/Chious)

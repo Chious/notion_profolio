@@ -12,7 +12,7 @@ export default function Contract() {
 
   const [open, setOpen] = useState(false);
 
-  const url = `${process.env.BASE_URL}${process.env.POST_URL}`;
+  const url = process.env.NEXT_PUBLIC_POST_PORT;
 
   async function sendFeedback() {
     try {
