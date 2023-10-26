@@ -12,9 +12,11 @@ export default function Contract() {
 
   const [open, setOpen] = useState(false);
 
+  const url = `${process.env.BASE_URL}${process.env.POST_URL}`;
+
   async function sendFeedback() {
     try {
-      const response = await fetch("http://localhost:3000/api/feedback");
+      const response = await fetch(url);
     } catch (err) {
       console.log(err);
     }
