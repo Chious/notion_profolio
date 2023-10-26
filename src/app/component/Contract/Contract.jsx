@@ -12,6 +12,14 @@ export default function Contract() {
 
   const [open, setOpen] = useState(false);
 
+  async function sendFeedback() {
+    try {
+      const response = await fetch("http://localhost:3000/api/feedback");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   const handleSubmit = () => {
     let checkName = name !== "";
     let checkEmail = email.match("[a-z0-9]+@[a-z]+.[a-z]{2,3}") !== null;
@@ -23,6 +31,7 @@ export default function Contract() {
         message: message,
       });
       setOpen(true);
+      sendFeedback();
     }
   };
 
