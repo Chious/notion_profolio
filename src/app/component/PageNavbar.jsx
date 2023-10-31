@@ -30,7 +30,7 @@ export default function PageAppBar() {
             <Link href="https://www.frontendmentor.io/profile/Chious">
               <Image src={fronticon} alt="" />
             </Link>
-            <Link href="www.linkedin.com/in/sam-chiou-51b2012">
+            <Link href="https://www.linkedin.com/in/sam-chiou-51b201238/">
               <Image src={linkedinicon} alt="" />
             </Link>
           </Stack>

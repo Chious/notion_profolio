@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { Button, Box, Divider, Stack, Typography } from "@mui/material";
 import Photo2 from "../../assets/images/profolio-picture.png";
-import { BasicSkill } from "./ChildTabs";
 import LabTabs from "./LabTabs";
 
 export default function Protfolio({ componentRef }) {

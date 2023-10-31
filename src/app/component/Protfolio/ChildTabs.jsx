@@ -1,7 +1,7 @@
 "use client";
 
 import { skill, api, other } from "./skill.jsx";
-import { Grid, Card, Typography } from "@mui/material";
+import { Grid, Card } from "@mui/material";
 
 export const BasicSkill = ({ type }) => {
   let data =

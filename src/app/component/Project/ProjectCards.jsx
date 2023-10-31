@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, Grid, Box, Typography } from "@mui/material";
+import { Card, Grid, Box } from "@mui/material";
 import Link from "next/link";
 import Image from "mui-image";
 
@@ -64,7 +64,7 @@ export const ProjectCardNew = ({ data }) => {
                     gap: "10px",
                   }}
                 >
-                  <Link
+                  <a
                     style={{
                       color: "white",
                       padding: 0,
@@ -80,8 +80,8 @@ export const ProjectCardNew = ({ data }) => {
                     rel="noopener noreferrer"
                   >
                     View Project
-                  </Link>
-                  <Link
+                  </a>
+                  <a
                     style={{
                       color: "white",
                       padding: 0,
@@ -95,7 +95,7 @@ export const ProjectCardNew = ({ data }) => {
                     href={Code}
                   >
                     View Code
-                  </Link>
+                  </a>
                 </div>
               </Box>
             )}
