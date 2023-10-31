@@ -2,10 +2,10 @@
 
 import { Box, Grid, TextField, Button, Stack } from "@mui/material";
 import PageAppBar from "../PageNavbar";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import AlertDialog from "./AlertDialog";
 
-export default function Contract() {
+function Contract(props, ref) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -48,6 +48,7 @@ export default function Contract() {
           alignItems: "center",
           marginTop: 20,
         }}
+        ref={ref}
       >
         <div style={{ marginRight: "120px", marginLeft: "120px" }}>
           <Grid container sx={{ pt: 5 }} spacing={3}>
@@ -146,3 +147,5 @@ export default function Contract() {
     </>
   );
 }
+
+export default forwardRef(Contract);

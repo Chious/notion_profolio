@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { Button, Box, Divider, Stack, Typography } from "@mui/material";
-import BasicTabs from "./BasicTabs";
 import Photo2 from "../../assets/images/profolio-picture.png";
 import { BasicSkill } from "./ChildTabs";
+import LabTabs from "./LabTabs";
 
-export default function Protfolio() {
+export default function Protfolio({ componentRef }) {
   return (
     <>
       <Stack sx={{ marginLeft: "120px", marginRight: "120px" }} spacing={4}>
@@ -40,10 +40,12 @@ export default function Protfolio() {
               </span>
             </h1>
             <p style={{ maxWidth: 520 }}>
-              {`Based in the Taipei, I'm a front-end developer passionate about
-              building web apps and slove user's problem.`}
+              {`I'm a front-end developer passionate about
+              building human-centered web pages that provide solutions to users' problems.`}
             </p>
-            <p>{`#Sociology #Front-end`}</p>
+            <p
+              style={{ color: "#4EE1A0" }}
+            >{`#Front-end #Sociology #Statistic`}</p>
             <Button
               sx={{
                 width: 150,
@@ -52,6 +54,11 @@ export default function Protfolio() {
                 borderColor: "#4EE1A0",
                 color: "white",
               }}
+              onClick={() =>
+                componentRef.current?.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
             >
               CONTRACT ME
             </Button>
@@ -59,7 +66,7 @@ export default function Protfolio() {
         </Box>
 
         <Divider sx={{ background: "gray" }} />
-        <BasicSkill />
+        <LabTabs />
       </Stack>
     </>
   );

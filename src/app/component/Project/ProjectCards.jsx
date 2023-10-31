@@ -14,11 +14,13 @@ export const ProjectCardNew = ({ data }) => {
       <p
         key={i}
         style={{
-          color: "black",
+          color: "#D9D9D9",
+          fontWeight: "200",
+          fontSize: "18px",
           height: 30,
           margin: 0,
-          background: "rgb(78, 225, 160)",
-          border: "1px solid none",
+          background: "none",
+          border: "2px solid none",
           borderRadius: "5px",
         }}
       >
@@ -68,9 +70,10 @@ export const ProjectCardNew = ({ data }) => {
                       padding: 0,
                       margin: 0,
                       width: 120,
-                      borderBottom: 5,
+                      borderBottom: "5px solid",
                       borderRadius: 0,
                       borderColor: "#4EE1A0",
+                      textAlign: "center",
                     }}
                     href={LivePage}
                     target="_blank"
@@ -84,9 +87,10 @@ export const ProjectCardNew = ({ data }) => {
                       padding: 0,
                       margin: 0,
                       width: 120,
-                      borderBottom: 5,
+                      borderBottom: "5px solid",
                       borderRadius: 0,
                       borderColor: "#4EE1A0",
+                      textAlign: "center",
                     }}
                     href={Code}
                   >

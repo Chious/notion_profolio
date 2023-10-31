@@ -1,6 +1,6 @@
 import { Client } from "@notionhq/client";
-const notionSecret = process.env.NOTION_API_SECRET;
-const notionDatabaseId = process.env.DATABASE_ID;
+const notionSecret = process.env.NEXT_PUBLIC_NOTION_API_SECRET;
+const notionDatabaseId = process.env.NEXT_PUBLIC_DATABASE_ID;
 
 const notion = new Client({ auth: notionSecret });
 

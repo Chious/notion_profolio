@@ -1,10 +1,19 @@
 "use client";
 
-import skill from "./skill.json";
+import { skill, api, other } from "./skill.jsx";
 import { Grid, Card, Typography } from "@mui/material";
 
-export const BasicSkill = () => {
-  const skills = skill.map((e, i) => (
+export const BasicSkill = ({ type }) => {
+  let data =
+    type === "skill"
+      ? skill
+      : type === "api"
+      ? api
+      : type === "other"
+      ? other
+      : null;
+
+  const skills = data.map((e, i) => (
     <Grid item md={4} lg={4} sm={12} key={i}>
       <Card sx={{ background: "none" }} elevation={0}>
         <h2>{e.skill}</h2>
