@@ -44,7 +44,7 @@ export default function Protfolio({ componentRef }) {
             </p>
             <p
               style={{ color: "#4EE1A0" }}
-            >{`#Front-end #Sociology #Statistic`}</p>
+            >{`#Sociology #Social Innovation #Statistic`}</p>
             <Button
               sx={{
                 width: 150,

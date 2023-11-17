@@ -142,6 +142,18 @@ function Contract(props, ref) {
           </Grid>
           <AlertDialog open={open} setOpen={setOpen} />
           <PageAppBar style={{ width: "100vw" }} />
+          <p style={{ fontSize: "12px", paddingLeft: "24px" }}>
+            © Chiou Jia Sheng 2023 · Build with{" "}
+            <span style={{ textDecorationLine: "underline" }}>
+              <a
+                href="https://developers.notion.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Notion
+              </a>
+            </span>
+          </p>
         </div>
       </Box>
     </>

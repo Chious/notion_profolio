@@ -6,6 +6,7 @@ import Project from "./Project/Project";
 import Contract from "./Contract/Contract";
 import { Box } from "@mui/material";
 import { useRef } from "react";
+import { AppProvider } from "../contexts/AppContext";
 
 export default function Mainpage() {
   const componentRef = useRef(null);
@@ -17,11 +18,13 @@ export default function Mainpage() {
         style={{ width: "100vw", background: "#151515" }}
       >
         <PageNavbar />
-        <Box>
-          <Protfolio componentRef={componentRef} />
-          <Project />
-          <Contract style={{ margin: 0 }} ref={componentRef} />
-        </Box>
+        <AppProvider>
+          <Box>
+            <Protfolio componentRef={componentRef} />
+            <Project />
+            <Contract style={{ margin: 0 }} ref={componentRef} />
+          </Box>
+        </AppProvider>
       </div>
     </>
   );

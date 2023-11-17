@@ -17,9 +17,11 @@ export default async function handler(req, res) {
   const rawData = query.results;
 
   //2. Filter publish Data
-  const PublishData = rawData.filter(
-    (data) => data.properties.Publish.select.name !== "unPublish"
-  );
+  const PublishData = rawData.filter((data) => {
+    if (data.properties.Publish) {
+      return data.properties.Publish.select.name !== "unPublish";
+    }
+  });
   const propertiesData = PublishData.map((data) => {
     let cover;
     if (data.cover.type === "external") {

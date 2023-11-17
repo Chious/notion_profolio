@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, Grid, Box } from "@mui/material";
+import { Card, Grid, Box, Button, Stack } from "@mui/material";
 import Link from "next/link";
 import Image from "mui-image";
 
@@ -11,7 +11,7 @@ export const ProjectCardNew = ({ data }) => {
 
   const printtag = Tags.map((e, i) => {
     return (
-      <p
+      <Button
         key={i}
         style={{
           color: "#D9D9D9",
@@ -19,20 +19,21 @@ export const ProjectCardNew = ({ data }) => {
           fontSize: "18px",
           height: 30,
           margin: 0,
-          background: "none",
+          background: "#343434",
           border: "2px solid none",
           borderRadius: "5px",
+          fontFamily: "Space Grotesk, sans-serif",
         }}
       >
         {e.name}
-      </p>
+      </Button>
     );
   });
 
   return (
     <>
       <Grid item md={6} lg={6} sm={12}>
-        <Card sx={{ background: "none" }} elevation={0}>
+        <Stack sx={{ background: "none" }} elevation={0} spacing={1}>
           <div
             className="Image"
             onMouseEnter={() => setHover(true)}
@@ -123,7 +124,7 @@ export const ProjectCardNew = ({ data }) => {
           >
             {printtag}
           </div>
-        </Card>
+        </Stack>
       </Grid>
     </>
   );
