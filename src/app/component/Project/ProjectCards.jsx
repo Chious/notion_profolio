@@ -1,13 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Card, Grid, Box, Button, Stack } from "@mui/material";
+import { Card, Grid, Box, Button, Stack, Skeleton } from "@mui/material";
 import Link from "next/link";
 import Image from "mui-image";
 
 export const ProjectCardNew = ({ data }) => {
+  const [load, setLoad] = useState(false);
   const { cover, Name, LivePage, Code, Tags } = data;
   const [isHovered, setHover] = useState(false);
+
+  const handleLoad = () => {
+    setLoad(true);
+  };
 
   const printtag = Tags.map((e, i) => {
     return (
@@ -100,6 +105,15 @@ export const ProjectCardNew = ({ data }) => {
                 </div>
               </Box>
             )}
+            {!load && (
+              <Skeleton
+                variant="rectangular"
+                width="100%"
+                height="370px"
+                sx={{ bgcolor: "gray" }}
+              />
+            )}
+
             <Image
               alt=""
               src={cover}
@@ -111,6 +125,7 @@ export const ProjectCardNew = ({ data }) => {
               height="370px"
               fit="cover"
               duration={0}
+              onLoad={handleLoad}
             />
           </div>
           <p style={{ color: "white" }}>{Name}</p>
