@@ -51,7 +51,7 @@ export const ProjectCardNew = ({ data }) => {
                 style={{
                   zIndex: 1,
                   width: "100%",
-                  height: "100%",
+                  height: "370px",
                   position: "absolute",
                   display: "flex",
                   alignItems: "center",
